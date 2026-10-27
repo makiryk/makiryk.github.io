@@ -24,11 +24,11 @@
     "flow": ["pin:地図", "arrow", "target:ダーツ店", "arrow", "clock:混雑予測"]
   },
   {
-    "name": "Android Auto ヘッドユニット",
+    "name": "BRBouyomi",
     "badge": "",
-    "desc": "スマホの Android Auto を、PC の画面で動かすツール。",
+    "desc": "棒読みちゃんの読み上げを、辞書の単語で区切るプラグイン。",
     "color": 4,
-    "scene": [["phone", "l"], ["wifi", "s"], ["car", "l"]],
-    "flow": ["phone:スマホ", "arrow", "usb:USB", "arrow", "car:車載画面"]
+    "scene": [["sheet", "l"], ["split", "s"], ["speaker", "l"]],
+    "flow": ["sheet:タグ辞書", "arrow", "split:単語で分割", "arrow", "speaker:読み上げ"]
   }
 ]
