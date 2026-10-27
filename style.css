@@ -113,6 +113,9 @@ h2 .ic { color: var(--accent); }
 .scene { color: var(--sfg); }
 .work h3 { font-size: 18px; font-weight: 900; line-height: 1.4; }
 .badge { font-size: 12px; font-weight: 700; color: var(--muted); margin-left: 4px; }
+.desc { margin-top: 4px; font-size: 14px; color: var(--muted); }
+/* short summaries: break at phrase boundaries and even out line lengths so no single word is left alone */
+.desc, .pt small, .lead, .catch { word-break: auto-phrase; text-wrap: balance; }
 .flow { display: flex; align-items: center; justify-content: center; gap: 4px; flex-wrap: wrap; margin-top: 10px; }
 .flow span { display: inline-flex; align-items: center; gap: 4px; font-size: 13px; padding: 4px 9px; border-radius: 9px; background: var(--chip); }
 .flow .ar { color: var(--muted); font-size: 14px; }
@@ -124,6 +127,15 @@ h2 .ic { color: var(--accent); }
 }
 .pb { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; font-size: 21px; background: var(--accent-soft); color: var(--accent); }
 a.pill:hover { outline: 2px solid var(--accent); }
+
+/* skills: icon + title + one-line summary, three equal cards in a row */
+.skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.skills .pill { border-radius: 20px; padding: 20px 18px; flex-direction: column; justify-content: flex-start; gap: 10px; text-align: center; }
+.pt { display: grid; gap: 4px; }
+.pt b { font-weight: 700; }
+.pt small { font-size: 13px; font-weight: 500; color: var(--muted); line-height: 1.6; }
+
+.lead { margin: -6px 0 18px; color: var(--muted); }
 
 .now { display: inline-flex; align-items: center; gap: 10px; padding: 14px 20px; border-radius: 18px; background: var(--card); box-shadow: var(--shadow); font-weight: 700; }
 .now .ic { color: var(--accent); font-size: 20px; }
@@ -146,4 +158,5 @@ a.pill:hover { outline: 2px solid var(--accent); }
   .works { grid-template-columns: 1fr; }
   .flow span { font-size: 12px; padding: 3px 7px; }
   .pills { flex-direction: column; align-items: center; }
+  .skills { grid-template-columns: 1fr; }
 }
