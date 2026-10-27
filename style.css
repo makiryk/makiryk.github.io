@@ -63,13 +63,8 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-
 
 /* Hero */
 .hero { display: grid; justify-items: center; gap: 28px; text-align: center; }
-.me {
-  min-width: 132px; height: 132px; padding: 0 56px; border-radius: 36px;
-  background: #3D5440; color: #FFFFFF;
-  display: grid; place-items: center;
-  font-weight: 900; font-size: 34px; letter-spacing: .02em;
-  box-shadow: 0 10px 24px rgba(61, 84, 64, .35);
-}
+/* the name sits beside the role tags, slightly emphasised but never the largest thing on the page */
+.chips li.me { background: #3D5440; color: #FFFFFF; font-weight: 900; letter-spacing: .02em; padding: 6px 16px; }
 .hero-body { display: grid; justify-items: center; gap: 16px; }
 .diagram { display: flex; align-items: flex-start; justify-content: center; }
 .node { display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; flex: none; width: 76px; }
@@ -92,7 +87,7 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-
 @keyframes flow { to { background-position: 11px 0; } }
 @media (prefers-reduced-motion: reduce) { .diagram .node::after { animation: none; } .dot { animation: none !important; } }
 
-.catch { font-size: clamp(20px, 1.2rem + 1vw, 26px); font-weight: 900; }
+.catch { font-size: clamp(24px, 1.2rem + 1.6vw, 34px); font-weight: 900; margin-top: 8px; }
 .chips { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
 .chips li { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 12px; background: var(--chip); font-size: 14px; font-weight: 700; }
 
@@ -138,7 +133,6 @@ a.pill:hover { outline: 2px solid var(--accent); }
 @media (max-width: 760px) {
   .wrap { padding-top: 32px; }
   .hero { gap: 20px; }
-  .me { min-width: 96px; height: 96px; padding: 0 40px; border-radius: 28px; font-size: 26px; }
   .node { width: 54px; font-size: 11px; }
   .nb { width: 50px; height: 50px; border-radius: 15px; font-size: 22px; }
   .diagram .node + .node { margin-left: 18px; }
