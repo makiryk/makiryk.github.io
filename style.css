@@ -113,6 +113,8 @@ h2 .ic { color: var(--accent); }
 }
 .scene { display: block; width: 100%; height: auto; }
 .work .scene { max-width: 240px; }
+/* an odd last card sits alone in the middle instead of in the left column */
+.work:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 9px); }
 .s1 { --sbg: var(--s1-bg); --sfg: var(--s1); }
 .s2 { --sbg: var(--s2-bg); --sfg: var(--s2); }
 .s3 { --sbg: var(--s3-bg); --sfg: var(--s3); }
@@ -149,6 +151,7 @@ a.pill:hover { outline: 2px solid var(--accent); }
 
 .lead { margin: -6px 0 18px; color: var(--muted); }
 
+.nows { display: flex; flex-direction: column; align-items: center; gap: 12px; }
 .now { display: inline-flex; align-items: center; gap: 10px; padding: 14px 20px; border-radius: 18px; background: var(--card); box-shadow: var(--shadow); font-weight: 700; }
 .now .ic { color: var(--accent); font-size: 20px; }
 .dot { width: 10px; height: 10px; border-radius: 50%; background: #2FB36B; box-shadow: 0 0 0 0 rgba(47, 179, 107, .5); animation: pulse 2s ease-out infinite; }
@@ -168,6 +171,7 @@ a.pill:hover { outline: 2px solid var(--accent); }
   .diagram .node + .node { margin-left: 18px; }
   .diagram .node:not(:last-child)::after { top: 24px; left: 52px; width: 20px; }
   .works { grid-template-columns: 1fr; }
+  .work:last-child:nth-child(odd) { width: auto; justify-self: stretch; }
   .flow span { font-size: 12px; padding: 3px 7px; }
   .pills { flex-direction: column; align-items: center; }
   .skills { grid-template-columns: 1fr; }

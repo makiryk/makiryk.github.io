@@ -14,6 +14,7 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 INDEX = ROOT / "index.html"
 SIZES = {"l": 52, "m": 36, "s": 32}  # icon sizes inside the 160 x 100 scene
+GAP = 6                               # space between neighbouring icons in a scene
 COLORS = range(1, 9)                  # scene colour slots s1..s8 defined in style.css
 CONNECTORS = {"arrow", "handoff"}     # flow items drawn as small connectors between steps
 NUDGE_Y = {"robot": 2}                # icons whose drawing sits high in its box, moved down (scene units)
@@ -25,7 +26,7 @@ def icon(name, cls="ic"):
 
 def scene(items):
     # lay the icons out side by side and centre the group in the 160 x 100 frame
-    total = sum(SIZES[s] for _, s in items)
+    total = sum(SIZES[s] for _, s in items) + GAP * (len(items) - 1)
     if total > 150:
         sys.exit(f"scene is too wide ({total} > 150): use fewer or smaller icons")
     x = (160 - total) / 2
@@ -34,7 +35,7 @@ def scene(items):
         w = SIZES[s]
         y = 50 - w / 2 + NUDGE_Y.get(name, 0)
         uses.append(f'<use href="#i-{name}" x="{x:g}" y="{y:g}" width="{w}" height="{w}"/>')
-        x += w
+        x += w + GAP
     return ('<svg class="scene" viewBox="0 0 160 100" aria-hidden="true"><rect width="160" height="100" rx="14"/>'
             + "".join(uses) + "</svg>")
 
@@ -90,7 +91,7 @@ def main():
         sys.exit(f"unknown icons: {', '.join(missing)} (add a <symbol id=\"i-NAME\"> to index.html first)")
 
     src = replace(src, "works", "\n".join(work(w) for w in works))
-    src = replace(src, "now", "\n".join(now(n) for n in nows))
+    src = replace(src, "now", '    <div class="nows">\n' + "\n".join(now(n) for n in nows) + "\n    </div>")
     INDEX.write_text(src, encoding="utf-8", newline="\n")
     print(f"built {len(works)} works, {len(nows)} now items")
 
