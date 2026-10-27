@@ -4,82 +4,122 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>K.E. — Web Developer</title>
-<meta name="description" content="K.E. のサイト。AI や Google のサービスを組み合わせて、いつもの作業をラクにするしくみを個人で作っています。">
+<meta name="description" content="K.E. のサイト。Gmail・スプレッドシート・カレンダーなどのサービスと AI をつないで、いつもの作業を自動化するしくみを作っています。">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#FBFBF9" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#141715" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F6F7F5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131614" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="page">
 
-<header class="intro">
-  <h1 class="name">K.E.</h1>
-  <p class="role">Web Developer ／ 個人開発</p>
-  <p>AI や Google のサービスを組み合わせて、いつもの作業をラクにするしくみを個人で作っています。</p>
-  <p>最近は、Alexa から Gemini に質問できるスキルや、Claude Code と Gemini が作業を任せ合うツールを作りました。</p>
+<!-- Icons: 24x24 line drawings, coloured by currentColor -->
+<svg class="defs" aria-hidden="true">
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-speaker" viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="6"/><path d="M8.5 7h7"/><circle cx="12" cy="14" r="3"/></symbol>
+  <symbol id="i-wave" viewBox="0 0 24 24"><path d="M4 10v4M8 7v10M12 4v16M16 7v10M20 10v4"/></symbol>
+  <symbol id="i-handoff" viewBox="0 0 24 24"><path d="M4 8h12l-3-3M20 16H8l3 3"/></symbol>
+  <symbol id="i-robot" viewBox="0 0 24 24"><rect x="5" y="8" width="14" height="11" rx="3"/><path d="M12 8V4M9 13h.01M15 13h.01"/><circle cx="12" cy="3.5" r="1"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M3 16v-3l2-5h14l2 5v3z"/><circle cx="7.5" cy="16.5" r="1.8"/><circle cx="16.5" cy="16.5" r="1.8"/><path d="M6 12h12"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M4 7l8 6 8-6"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-sheet" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 9h16M4 15h16M10 3v18"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><rect x="2" y="8" width="12" height="8" rx="4"/><rect x="10" y="8" width="12" height="8" rx="4"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6.5A1.5 1.5 0 014.5 5H9l2 2.5h8.5A1.5 1.5 0 0121 9v9.5a1.5 1.5 0 01-1.5 1.5h-15A1.5 1.5 0 013 18.5z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-usb" viewBox="0 0 24 24"><path d="M12 3v14M8 7l4-4 4 4M7 12v2l5 3 5-3v-3"/><circle cx="12" cy="19.5" r="1.5"/></symbol>
+  <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2 9a15 15 0 0120 0M5.5 12.5a10 10 0 0113 0M9 16a5 5 0 016 0"/><circle cx="12" cy="19" r="1" fill="currentColor"/></symbol>
+</svg>
+
+<div class="wrap">
+
+<header class="hero">
+  <div class="me" aria-hidden="true">K.E.</div>
+  <div class="hero-body">
+    <h1 class="sr">K.E.</h1>
+    <ol class="diagram" aria-label="Gmail、スプレッドシート、AI、カレンダーをつないで自動化">
+      <li class="node"><span class="nb"><svg class="ic"><use href="#i-mail"/></svg></span>Gmail</li>
+      <li class="node"><span class="nb"><svg class="ic"><use href="#i-sheet"/></svg></span>Sheets</li>
+      <li class="node ai"><span class="nb"><svg class="ic"><use href="#i-spark"/></svg></span>AI</li>
+      <li class="node"><span class="nb"><svg class="ic"><use href="#i-calendar"/></svg></span>Calendar</li>
+      <li class="node"><span class="nb"><svg class="ic"><use href="#i-bolt"/></svg></span>自動化</li>
+    </ol>
+    <p class="catch">サービスと AI を、つなぐ。</p>
+    <ul class="chips">
+      <li><svg class="ic"><use href="#i-code"/></svg>Web Developer</li>
+      <li><svg class="ic"><use href="#i-gear"/></svg>個人開発</li>
+    </ul>
+  </div>
 </header>
 
 <main>
   <section aria-labelledby="works">
-    <h2 id="works">作ったもの</h2>
-    <ul class="list">
-      <li>
-        <h3>ジェミニ</h3>
-        <p>Alexa に話しかけた質問に Gemini が答えて、そのまま読み上げる Alexa スキル。続けて質問もできます。</p>
-        <p class="meta">Alexa · Gemini API</p>
+    <h2 id="works"><svg class="ic"><use href="#i-folder"/></svg>作ったもの</h2>
+    <ul class="works">
+      <li class="work s1">
+        <svg class="scene" viewBox="0 0 160 100" aria-hidden="true"><rect width="160" height="100" rx="14"/>
+          <use href="#i-speaker" x="20" y="24" width="52" height="52"/><use href="#i-wave" x="72" y="34" width="32" height="32"/><use href="#i-spark" x="104" y="32" width="36" height="36"/></svg>
+        <div>
+          <h3>ジェミニ</h3>
+          <p class="flow"><span><svg class="ic"><use href="#i-speaker"/></svg>Alexa</span><svg class="ic ar"><use href="#i-arrow"/></svg><span><svg class="ic"><use href="#i-spark"/></svg>Gemini</span><svg class="ic ar"><use href="#i-arrow"/></svg><span><svg class="ic"><use href="#i-wave"/></svg>読み上げ</span></p>
+        </div>
       </li>
-      <li>
-        <h3>ai-handoff</h3>
-        <p>Claude Code と Gemini（Antigravity CLI）が、得意な作業を互いに任せ合うしくみ。使用量を見て振り分けも決めます。</p>
-        <p class="meta">Claude Code · Gemini · Python</p>
+      <li class="work s2">
+        <svg class="scene" viewBox="0 0 160 100" aria-hidden="true"><rect width="160" height="100" rx="14"/>
+          <use href="#i-robot" x="12" y="26" width="52" height="52"/><use href="#i-handoff" x="64" y="34" width="32" height="32"/><use href="#i-robot" x="96" y="26" width="52" height="52"/></svg>
+        <div>
+          <h3>ai-handoff</h3>
+          <p class="flow"><span><svg class="ic"><use href="#i-robot"/></svg>Claude Code</span><svg class="ic ar"><use href="#i-handoff"/></svg><span><svg class="ic"><use href="#i-robot"/></svg>Gemini</span></p>
+        </div>
       </li>
-      <li>
-        <h3>darts-crowd-map <span class="badge">開発中</span></h3>
-        <p>ダーツのお店を地図で探して、混み具合の予測を見られる Web アプリ。追加費用ゼロで動かすことを決まりにしています。</p>
-        <p class="meta">Web · 地図</p>
+      <li class="work s3">
+        <svg class="scene" viewBox="0 0 160 100" aria-hidden="true"><rect width="160" height="100" rx="14"/>
+          <use href="#i-pin" x="22" y="22" width="56" height="56"/><use href="#i-target" x="86" y="24" width="52" height="52"/></svg>
+        <div>
+          <h3>darts-crowd-map <span class="badge">開発中</span></h3>
+          <p class="flow"><span><svg class="ic"><use href="#i-pin"/></svg>地図</span><svg class="ic ar"><use href="#i-arrow"/></svg><span><svg class="ic"><use href="#i-target"/></svg>ダーツ店</span><svg class="ic ar"><use href="#i-arrow"/></svg><span><svg class="ic"><use href="#i-clock"/></svg>混雑予測</span></p>
+        </div>
       </li>
-      <li>
-        <h3>Android Auto ヘッドユニット</h3>
-        <p>USB でつないだスマホの Android Auto を、PC 上の車載ナビ画面に映す Windows 用ランチャー。</p>
-        <p class="meta">Python · Windows</p>
+      <li class="work s4">
+        <svg class="scene" viewBox="0 0 160 100" aria-hidden="true"><rect width="160" height="100" rx="14"/>
+          <use href="#i-phone" x="13" y="24" width="52" height="52"/><use href="#i-wifi" x="65" y="35" width="30" height="30"/><use href="#i-car" x="95" y="23" width="52" height="52"/></svg>
+        <div>
+          <h3>Android Auto ヘッドユニット</h3>
+          <p class="flow"><span><svg class="ic"><use href="#i-phone"/></svg>スマホ</span><svg class="ic ar"><use href="#i-arrow"/></svg><span><svg class="ic"><use href="#i-usb"/></svg>USB</span><svg class="ic ar"><use href="#i-arrow"/></svg><span><svg class="ic"><use href="#i-car"/></svg>車載画面</span></p>
+        </div>
       </li>
     </ul>
   </section>
 
   <section aria-labelledby="skills">
-    <h2 id="skills">できること</h2>
-    <ul class="list">
-      <li>
-        <h3>AI といっしょに開発</h3>
-        <p>Claude や Gemini を開発の相棒にして、アイデアを小さく早く形にします。</p>
-      </li>
-      <li>
-        <h3>Google のサービスをつなぐ</h3>
-        <p>Gmail・カレンダー・スプレッドシートなどをつないで、転記や確認の手間をなくします。</p>
-      </li>
-      <li>
-        <h3>いつもの作業をラクにする</h3>
-        <p>毎日くり返している作業を見つけて、ボタンひとつで終わるしくみにします。</p>
-      </li>
+    <h2 id="skills"><svg class="ic"><use href="#i-gear"/></svg>できること</h2>
+    <ul class="pills">
+      <li class="pill"><span class="pb"><svg class="ic"><use href="#i-spark"/></svg></span>AI と開発</li>
+      <li class="pill"><span class="pb"><svg class="ic"><use href="#i-link"/></svg></span>Google をつなぐ</li>
+      <li class="pill"><span class="pb"><svg class="ic"><use href="#i-bolt"/></svg></span>作業を自動化</li>
     </ul>
   </section>
 
   <section aria-labelledby="now">
-    <h2 id="now">いま</h2>
-    <p>ダーツのお店の混み具合がわかる Web アプリ（darts-crowd-map）を作っています。</p>
+    <h2 id="now"><svg class="ic"><use href="#i-clock"/></svg>いま</h2>
+    <p class="now"><span class="dot" aria-hidden="true"></span><svg class="ic"><use href="#i-target"/></svg>ダーツ店の混雑マップを開発中</p>
   </section>
 
   <section aria-labelledby="contact">
-    <h2 id="contact">連絡先</h2>
-    <p>小さなご相談も、お気軽にどうぞ。</p>
-    <ul class="links">
-      <li><a href="mailto:mako.makiryk@gmail.com">mako.makiryk@gmail.com</a></li>
-      <li><a href="https://github.com/makiryk">GitHub</a></li>
+    <h2 id="contact"><svg class="ic"><use href="#i-mail"/></svg>連絡先</h2>
+    <ul class="pills">
+      <li><a class="pill" href="mailto:mako.makiryk@gmail.com"><span class="pb"><svg class="ic"><use href="#i-mail"/></svg></span>メール</a></li>
+      <li><a class="pill" href="https://github.com/makiryk"><span class="pb"><svg class="ic"><use href="#i-code"/></svg></span>GitHub</a></li>
     </ul>
   </section>
 </main>
