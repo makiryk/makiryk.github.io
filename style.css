@@ -1,0 +1,103 @@
+/* Colours match the business card. Text/background pairs meet WCAG 4.5:1. */
+:root {
+  --green: #506B54;
+  --green-dark: #3F5743;
+  --grey: #5E6B62;
+  --ink: #2F3B33;
+  --cream: #FAFAF6;
+  --tint: #DCE8DC;
+  --bg: #FFFFFF;
+  --surface: #F4F7F3;
+  --line: #D5DED5;
+  --maru: "Zen Maru Gothic", sans-serif;
+  --kaku: "Zen Kaku Gothic New", sans-serif;
+  --klee: "Klee One", "Zen Maru Gothic", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--kaku);
+  font-size: 16px;
+  line-height: 1.8;
+  -webkit-text-size-adjust: 100%;
+}
+.defs { position: absolute; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; position: relative; }
+a { color: var(--green); }
+
+.ln { fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.ic { width: 1.1em; height: 1.1em; flex: none; }
+.leaf-body { fill: var(--tint); stroke: var(--green); stroke-width: 3; }
+.leaf-mid { stroke: var(--green); stroke-width: 3; }
+
+/* Hero: the front of the card */
+.hero { padding: 72px 0 64px; border-bottom: 1px solid var(--line); overflow: hidden; }
+.hero-leaf { position: absolute; right: 24px; top: -8px; width: 150px; height: 86px; transform: rotate(-25deg); }
+.role {
+  display: flex; align-items: center; gap: .5em; margin: 0;
+  font-family: var(--maru); font-weight: 500; color: var(--green); letter-spacing: .08em;
+}
+.name {
+  margin: 20px 0 0;
+  font-family: var(--maru); font-weight: 700; font-size: clamp(44px, 9vw, 72px);
+  letter-spacing: .08em; line-height: 1.2;
+}
+.lead { margin: 28px 0 0; padding-top: 24px; border-top: 2px solid var(--green); width: fit-content; max-width: 100%; font-size: 17px; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.btn {
+  display: inline-block; padding: 10px 22px; border-radius: 999px;
+  font-family: var(--maru); font-weight: 700; text-decoration: none; border: 2px solid var(--green);
+}
+.btn-primary { background: var(--green); color: #FFFFFF; }
+.btn-primary:hover { background: var(--green-dark); border-color: var(--green-dark); }
+.btn-ghost { color: var(--green); }
+.btn-ghost:hover { background: var(--surface); }
+.btn:focus-visible, .links a:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+/* Sections */
+.section { padding: 64px 0; }
+.section h2 {
+  display: flex; align-items: center; gap: .5em; margin: 0 0 28px;
+  font-family: var(--klee); font-weight: 600; font-size: 26px; letter-spacing: .1em;
+}
+
+/* Skills: the back of the card */
+.skills { background: var(--green); color: var(--cream); }
+.skills h2 { color: #FFFFFF; }
+.cards { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+.cards-3 { grid-template-columns: repeat(3, 1fr); }
+.cards-2 { grid-template-columns: repeat(2, 1fr); }
+.card { padding: 24px; border-radius: 14px; }
+.card h3 { margin: 0; font-family: var(--klee); font-weight: 600; font-size: 19px; line-height: 1.5; }
+.card p { margin: 10px 0 0; }
+.skills .card { background: rgba(255, 255, 255, .08); border: 1px solid rgba(220, 232, 220, .35); }
+.card-ic { width: 28px; height: 28px; color: var(--tint); margin-bottom: 12px; }
+
+/* Works */
+.work { background: var(--surface); border: 1px solid var(--line); display: flex; flex-direction: column; }
+.work .sub { display: block; font-family: var(--kaku); font-weight: 500; font-size: 13px; color: var(--grey); letter-spacing: .05em; }
+.tags { list-style: none; margin: auto 0 0; padding: 14px 0 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.tags li { font-size: 13px; padding: 1px 10px; border-radius: 999px; background: var(--tint); color: var(--ink); }
+
+/* Contact */
+.contact { border-top: 1px solid var(--line); }
+.note { display: flex; align-items: center; gap: .6em; margin: 0 0 20px; font-family: var(--klee); font-weight: 600; font-size: 19px; color: var(--green); }
+.note-leaf { width: 40px; height: 23px; transform: rotate(-20deg); }
+.links { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.links a { display: inline-flex; align-items: center; gap: .6em; font-size: 18px; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
+.links a:hover { color: var(--green); border-color: var(--green); }
+.links .ic { color: var(--green); }
+
+.footer { padding: 24px 0 32px; font-size: 13px; color: var(--grey); text-align: center; }
+
+@media (max-width: 760px) {
+  .cards-3, .cards-2 { grid-template-columns: 1fr; }
+  .hero { padding: 56px 0 48px; }
+  .hero-leaf { width: 96px; height: 55px; right: 8px; top: -18px; }
+  .section { padding: 48px 0; }
+  .pc { display: none; }
+}

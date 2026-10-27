@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>K.E. | Web Developer</title>
+<meta name="description" content="K.E. のサイト。AI や Google のサービスを組み合わせて、いつもの作業をラクにするしくみを作っています。">
+<meta name="theme-color" content="#506B54">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500&family=Klee+One:wght@600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<svg width="0" height="0" class="defs" aria-hidden="true">
+  <symbol id="i-pc" viewBox="0 0 22 22"><g class="ln"><rect x="3" y="3" width="16" height="11" rx="1.5"/><path d="M1 18 h20"/></g></symbol>
+  <symbol id="i-mail" viewBox="0 0 22 22"><g class="ln"><rect x="1" y="4" width="20" height="15" rx="2.5"/><path d="M2 6 L11 13 L20 6"/></g></symbol>
+  <symbol id="i-code" viewBox="0 0 22 22"><g class="ln"><path d="M8 5 L2 11 L8 17 M14 5 L20 11 L14 17"/></g></symbol>
+  <symbol id="i-spark" viewBox="0 0 22 22"><path d="M11 1 L13.3 8.7 L21 11 L13.3 13.3 L11 21 L8.7 13.3 L1 11 L8.7 8.7 Z" fill="currentColor"/></symbol>
+  <symbol id="i-link" viewBox="0 0 22 22"><g class="ln"><rect x="1" y="7" width="12" height="8" rx="4"/><rect x="9" y="7" width="12" height="8" rx="4"/></g></symbol>
+  <symbol id="i-gear" viewBox="0 0 22 22"><g class="ln"><circle cx="11" cy="11" r="6"/><circle cx="11" cy="11" r="2.2"/><path d="M17 11L20.5 11M15.24 15.24L17.72 17.72M11 17L11 20.5M6.76 15.24L4.28 17.72M5 11L1.5 11M6.76 6.76L4.28 4.28M11 5L11 1.5M15.24 6.76L17.72 4.28" stroke-width="4" stroke-linecap="butt"/></g></symbol>
+  <symbol id="i-toolbox" viewBox="0 0 22 22"><g class="ln"><rect x="1" y="7" width="20" height="13" rx="2"/><path d="M8 7 V4 h6 v3 M1 12 h20"/><rect x="9" y="10.5" width="4" height="3" rx="0.5"/></g></symbol>
+  <symbol id="i-bulb" viewBox="0 0 22 22"><g class="ln"><path d="M7 14 a7 7 0 1 1 8 0 v2 h-8 z"/><path d="M8 20 h6"/></g></symbol>
+  <symbol id="i-chat" viewBox="0 0 22 22"><g class="ln"><path d="M4 3 h14 a3 3 0 0 1 3 3 v8 a3 3 0 0 1 -3 3 h-8 l-5 4 v-4 h-1 a3 3 0 0 1 -3 -3 v-8 a3 3 0 0 1 3 -3 z"/></g></symbol>
+  <symbol id="leaf" viewBox="-6 -32 112 64"><path d="M0 0 C 30 -38 80 -38 100 0 C 80 38 30 38 0 0 Z" class="leaf-body"/><path d="M6 0 L 92 0" class="leaf-mid"/></symbol>
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <svg class="hero-leaf" aria-hidden="true"><use href="#leaf"/></svg>
+    <p class="role"><svg class="ic"><use href="#i-pc"/></svg>Web Developer ／ 個人開発</p>
+    <h1 class="name">K.E.</h1>
+    <p class="lead">AI や Google のサービスを組み合わせて、<br class="pc">いつもの作業をラクにするしくみを作っています。</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#works">作ったものを見る</a>
+      <a class="btn btn-ghost" href="#contact">相談する</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="section skills" aria-labelledby="skills-h">
+    <div class="wrap">
+      <h2 id="skills-h"><svg class="ic"><use href="#i-toolbox"/></svg>得意なこと</h2>
+      <ul class="cards cards-3">
+        <li class="card">
+          <svg class="card-ic"><use href="#i-spark"/></svg>
+          <h3>AI といっしょに開発</h3>
+          <p>Claude や Gemini を開発の相棒にして、アイデアを小さく早く形にします。</p>
+        </li>
+        <li class="card">
+          <svg class="card-ic"><use href="#i-link"/></svg>
+          <h3>Google のサービスをつなぐ</h3>
+          <p>Gmail・カレンダー・スプレッドシートなどをつないで、転記や確認の手間をなくします。</p>
+        </li>
+        <li class="card">
+          <svg class="card-ic"><use href="#i-gear"/></svg>
+          <h3>いつもの作業をラクにする</h3>
+          <p>毎日くり返している作業を見つけて、ボタンひとつで終わるしくみにします。</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section works" id="works" aria-labelledby="works-h">
+    <div class="wrap">
+      <h2 id="works-h"><svg class="ic"><use href="#i-bulb"/></svg>作ったもの</h2>
+      <ul class="cards cards-2">
+        <li class="card work">
+          <h3>ジェミニ <span class="sub">Alexa スキル</span></h3>
+          <p>Alexa に話しかけた質問に Gemini が答え、そのまま読み上げます。直近のやりとりを覚えているので、続けて質問できます。</p>
+          <ul class="tags"><li>Alexa</li><li>Gemini API</li></ul>
+        </li>
+        <li class="card work">
+          <h3>ai-handoff <span class="sub">開発ツール</span></h3>
+          <p>Claude Code と Gemini（Antigravity CLI）が、得意な作業を互いに任せ合うしくみ。使用量を見て振り分けも決めます。</p>
+          <ul class="tags"><li>Claude Code</li><li>Gemini</li><li>Python</li></ul>
+        </li>
+        <li class="card work">
+          <h3>darts-crowd-map <span class="sub">Web アプリ・開発中</span></h3>
+          <p>ダーツのお店を地図で探して、混み具合の予測を見られる Web アプリ。追加費用ゼロで動かすことを決まりにしています。</p>
+          <ul class="tags"><li>Web</li><li>地図</li></ul>
+        </li>
+        <li class="card work">
+          <h3>Android Auto ヘッドユニット <span class="sub">Windows アプリ</span></h3>
+          <p>USB でつないだスマホの Android Auto を、PC 上の車載ナビ画面に映すためのランチャー。準備から起動までを画面で操作できます。</p>
+          <ul class="tags"><li>Python</li><li>Windows</li></ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact" aria-labelledby="contact-h">
+    <div class="wrap">
+      <h2 id="contact-h"><svg class="ic"><use href="#i-chat"/></svg>お問い合わせ</h2>
+      <p class="note"><svg class="note-leaf" aria-hidden="true"><use href="#leaf"/></svg>小さなご相談も、お気軽にどうぞ</p>
+      <ul class="links">
+        <li><a href="mailto:mako.makiryk@gmail.com"><svg class="ic"><use href="#i-mail"/></svg>mako.makiryk@gmail.com</a></li>
+        <li><a href="https://github.com/makiryk"><svg class="ic"><use href="#i-code"/></svg>github.com/makiryk</a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">© 2026 K.E.</div>
+</footer>
+
+</body>
+</html>
