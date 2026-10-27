@@ -1,0 +1,34 @@
+[
+  {
+    "name": "ジェミニ",
+    "badge": "",
+    "desc": "話しかけるだけで、Gemini が答えてくれる Alexa スキル。",
+    "color": 1,
+    "scene": [["speaker", "l"], ["wave", "s"], ["spark", "m"]],
+    "flow": ["speaker:Alexa", "arrow", "spark:Gemini", "arrow", "wave:読み上げ"]
+  },
+  {
+    "name": "ai-handoff",
+    "badge": "",
+    "desc": "Claude Code と Gemini が、得意な作業を任せ合うしくみ。",
+    "color": 2,
+    "scene": [["robot", "l"], ["handoff", "s"], ["robot", "l"]],
+    "flow": ["robot:Claude Code", "handoff", "robot:Gemini"]
+  },
+  {
+    "name": "darts-crowd-map",
+    "badge": "開発中",
+    "desc": "ダーツ店を地図で探して、混み具合を予測する Web アプリ。",
+    "color": 3,
+    "scene": [["pin", "l"], ["target", "l"]],
+    "flow": ["pin:地図", "arrow", "target:ダーツ店", "arrow", "clock:混雑予測"]
+  },
+  {
+    "name": "Android Auto ヘッドユニット",
+    "badge": "",
+    "desc": "スマホの Android Auto を、PC の画面で動かすツール。",
+    "color": 4,
+    "scene": [["phone", "l"], ["wifi", "s"], ["car", "l"]],
+    "flow": ["phone:スマホ", "arrow", "usb:USB", "arrow", "car:車載画面"]
+  }
+]

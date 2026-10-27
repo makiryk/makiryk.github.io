@@ -17,6 +17,10 @@
   --s2-bg: #E5ECF7; --s2: #2F4F86;
   --s3-bg: #F7ECE1; --s3: #8A4B1F;
   --s4-bg: #EFE7F5; --s4: #5B3D80;
+  --s5-bg: #E0F1F1; --s5: #1F5F5F;
+  --s6-bg: #F9E3E3; --s6: #8E2F2F;
+  --s7-bg: #F6F0D8; --s7: #6B5A12;
+  --s8-bg: #ECEDEB; --s8: #3F4642;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -34,6 +38,10 @@
     --s2-bg: #1F2A3D; --s2: #9DB7E6;
     --s3-bg: #33261C; --s3: #E2A97E;
     --s4-bg: #2B2236; --s4: #C3A6E6;
+    --s5-bg: #1C3131; --s5: #8FD0CF;
+    --s6-bg: #352020; --s6: #EBA3A3;
+    --s7-bg: #2F2B19; --s7: #DCC77A;
+    --s8-bg: #262A27; --s8: #C4CBC6;
   }
 }
 
@@ -109,6 +117,10 @@ h2 .ic { color: var(--accent); }
 .s2 { --sbg: var(--s2-bg); --sfg: var(--s2); }
 .s3 { --sbg: var(--s3-bg); --sfg: var(--s3); }
 .s4 { --sbg: var(--s4-bg); --sfg: var(--s4); }
+.s5 { --sbg: var(--s5-bg); --sfg: var(--s5); }
+.s6 { --sbg: var(--s6-bg); --sfg: var(--s6); }
+.s7 { --sbg: var(--s7-bg); --sfg: var(--s7); }
+.s8 { --sbg: var(--s8-bg); --sfg: var(--s8); }
 .scene rect { fill: var(--sbg); }
 .scene { color: var(--sfg); }
 .work h3 { font-size: 18px; font-weight: 900; line-height: 1.4; }

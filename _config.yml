@@ -1,0 +1,6 @@
+# GitHub Pages: keep the build tools, content data and notes off the public site
+exclude:
+  - tools
+  - content
+  - drafts
+  - README.md
