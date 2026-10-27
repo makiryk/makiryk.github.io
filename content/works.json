@@ -8,7 +8,7 @@
     "flow": ["speaker:Alexa", "arrow", "spark:Gemini", "arrow", "wave:読み上げ"]
   },
   {
-    "name": "ai-handoff",
+    "name": "AI 同士の作業分担ツール",
     "badge": "",
     "desc": "Claude Code と Gemini が、得意な作業を任せ合うしくみ。",
     "color": 2,
@@ -16,7 +16,7 @@
     "flow": ["robot:Claude Code", "handoff", "robot:Gemini"]
   },
   {
-    "name": "darts-crowd-map",
+    "name": "ダーツ店混雑マップ",
     "badge": "開発中",
     "desc": "ダーツ店を地図で探して、混み具合を予測する Web アプリ。",
     "color": 3,
@@ -24,7 +24,7 @@
     "flow": ["pin:地図", "arrow", "target:ダーツ店", "arrow", "clock:混雑予測"]
   },
   {
-    "name": "BRBouyomi",
+    "name": "棒読みちゃん 区切り読みプラグイン",
     "badge": "",
     "desc": "棒読みちゃんの読み上げを、辞書の単語で区切るプラグイン。",
     "color": 4,
