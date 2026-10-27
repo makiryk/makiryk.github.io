@@ -100,6 +100,7 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-
 @media (prefers-reduced-motion: reduce) { .diagram .node::after { animation: none; } .dot { animation: none !important; } }
 
 .catch { font-size: clamp(24px, 1.2rem + 1.6vw, 34px); font-weight: 900; line-height: 1.4; }
+.catch-ja { display: block; margin-top: 4px; font-size: 15px; font-weight: 700; color: var(--muted); }
 
 /* Sections */
 section { margin-top: 64px; text-align: center; }
