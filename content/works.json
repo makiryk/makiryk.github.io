@@ -1,13 +1,5 @@
 [
   {
-    "name": "ジェミニ",
-    "badge": "",
-    "desc": "話しかけるだけで、Gemini が答えてくれる Alexa スキル。",
-    "color": 1,
-    "scene": [["speaker", "l"], ["wave", "s"], ["spark", "m"]],
-    "flow": ["speaker:Alexa", "arrow", "spark:Gemini", "arrow", "wave:読み上げ"]
-  },
-  {
     "name": "AI 同士の作業分担ツール",
     "badge": "",
     "desc": "Claude Code と Gemini が、得意な作業を任せ合うしくみ。",
@@ -24,14 +16,6 @@
     "flow": ["pin:地図", "arrow", "target:ダーツ店", "arrow", "clock:混雑予測"]
   },
   {
-    "name": "棒読みちゃん 区切り読みプラグイン",
-    "badge": "",
-    "desc": "棒読みちゃんの読み上げを、辞書の単語で区切るプラグイン。",
-    "color": 4,
-    "scene": [["sheet", "l"], ["split", "s"], ["speaker", "l"]],
-    "flow": ["sheet:タグ辞書", "arrow", "split:単語で分割", "arrow", "speaker:読み上げ"]
-  },
-  {
     "name": "Echo Show 時計ダッシュボード",
     "badge": "",
     "desc": "Echo Show に天気・予定・運行情報・AI のひとことを常時表示するしくみ。",
@@ -40,11 +24,27 @@
     "flow": ["cloud:天気・予定", "arrow", "spark:Claude", "arrow", "devices:常時表示"]
   },
   {
+    "name": "ジェミニ",
+    "badge": "",
+    "desc": "話しかけるだけで、Gemini が答えてくれる Alexa スキル。",
+    "color": 1,
+    "scene": [["speaker", "l"], ["wave", "s"], ["spark", "m"]],
+    "flow": ["speaker:Alexa", "arrow", "spark:Gemini", "arrow", "wave:読み上げ"]
+  },
+  {
     "name": "赤ちゃんと話すテレビ",
     "badge": "開発中",
     "desc": "赤ちゃんの声に反応して、AI が優しく語りかけるテレビアプリ。",
     "color": 6,
     "scene": [["wave", "l"], ["spark", "s"], ["devices", "l"]],
     "flow": ["wave:赤ちゃんの声", "arrow", "spark:Claude", "arrow", "speaker:優しい相槌"]
+  },
+  {
+    "name": "棒読みちゃん 区切り読みプラグイン",
+    "badge": "",
+    "desc": "棒読みちゃんの読み上げを、辞書の単語で区切るプラグイン。",
+    "color": 4,
+    "scene": [["sheet", "l"], ["split", "s"], ["speaker", "l"]],
+    "flow": ["sheet:タグ辞書", "arrow", "split:単語で分割", "arrow", "speaker:読み上げ"]
   }
 ]
