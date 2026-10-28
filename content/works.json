@@ -30,5 +30,13 @@
     "color": 4,
     "scene": [["sheet", "l"], ["split", "s"], ["speaker", "l"]],
     "flow": ["sheet:タグ辞書", "arrow", "split:単語で分割", "arrow", "speaker:読み上げ"]
+  },
+  {
+    "name": "Echo Show 時計ダッシュボード",
+    "badge": "",
+    "desc": "Echo Show に天気・予定・運行情報・AI のひとことを常時表示するしくみ。",
+    "color": 5,
+    "scene": [["cloud", "l"], ["spark", "s"], ["devices", "l"]],
+    "flow": ["cloud:天気・予定", "arrow", "spark:Claude", "arrow", "devices:常時表示"]
   }
 ]
