@@ -143,14 +143,16 @@ h2 .ic { color: var(--accent); }
 .pb { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; font-size: 21px; background: var(--accent-soft); color: var(--accent); }
 a.pill:hover { outline: 2px solid var(--accent); }
 
-/* X: the account link is the main line and a small DM link sits under it, both inside one pill of the same height as the others */
-.pill-x:hover { outline: 2px solid var(--accent); }
-.pt-x { display: grid; gap: 2px; justify-items: start; line-height: 1.2; }
-.pt-x a { color: inherit; text-decoration: none; border-radius: 6px; }
-.pt-x a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
-.pt-x a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.x-main { font-size: 16px; font-weight: 700; }
-.x-sub { font-size: 12px; font-weight: 600; color: var(--muted); }
+/* contact: align to the top so a column with a sub button under it does not stretch the other pills */
+.contact { align-items: flex-start; }
+.pill-col { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+/* DM: a smaller pill under the X button */
+.pill-sub {
+  display: inline-flex; align-items: center; min-height: 0; padding: 4px 14px; border-radius: 999px;
+  font-size: 12px; font-weight: 600; color: var(--muted); background: var(--card); box-shadow: var(--shadow); text-decoration: none;
+}
+.pill-sub:hover { color: var(--accent); outline: 2px solid var(--accent); }
+.pill-sub:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 /* skills: icon + title + one-line summary, three equal cards in a row */
 .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
