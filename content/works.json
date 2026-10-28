@@ -38,5 +38,13 @@
     "color": 5,
     "scene": [["cloud", "l"], ["spark", "s"], ["devices", "l"]],
     "flow": ["cloud:天気・予定", "arrow", "spark:Claude", "arrow", "devices:常時表示"]
+  },
+  {
+    "name": "赤ちゃんと話すテレビ",
+    "badge": "開発中",
+    "desc": "赤ちゃんの声に反応して、AI が優しく語りかけるテレビアプリ。",
+    "color": 6,
+    "scene": [["wave", "l"], ["spark", "s"], ["devices", "l"]],
+    "flow": ["wave:赤ちゃんの声", "arrow", "spark:Claude", "arrow", "speaker:優しい相槌"]
   }
 ]
