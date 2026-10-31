@@ -26,6 +26,8 @@ def icon(name, cls="ic"):
 
 def scene(items):
     # lay the icons out side by side and centre the group in the 160 x 100 frame
+    if any(name in CONNECTORS for name, _ in items):
+        sys.exit("scene must not use arrow/handoff: connectors belong in the flow, not the illustration")
     total = sum(SIZES[s] for _, s in items) + GAP * (len(items) - 1)
     if total > 150:
         sys.exit(f"scene is too wide ({total} > 150): use fewer or smaller icons")

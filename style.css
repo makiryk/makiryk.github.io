@@ -184,14 +184,15 @@ a.pill:hover { outline: 2px solid var(--accent); }
   .nb { width: 50px; height: 50px; border-radius: 15px; font-size: 22px; }
   .diagram .node + .node { margin-left: 18px; }
   .diagram .node:not(:last-child)::after { top: 24px; left: 52px; width: 20px; }
-  .works { --cols: 2; --gap: 10px; }
-  .work { padding: 10px; gap: 8px; }
+  /* phones: three small cards per row; the flow chips do not fit that width, so only the summary is shown */
+  .works { --cols: 3; --gap: 8px; }
+  .work { padding: 7px 7px 10px; gap: 6px; border-radius: 12px; }
   .work .scene { max-width: 100%; }
-  .work h3 { font-size: 14px; }
-  .desc { font-size: 12px; line-height: 1.6; }
-  .flow { gap: 3px; margin-top: 8px; }
-  .flow span { font-size: 11px; padding: 2px 6px; gap: 3px; }
-  .flow .ar { font-size: 12px; }
+  /* at this width a whole katakana phrase does not fit, so split anywhere and balance the two lines instead */
+  .work h3 { font-size: 11.5px; line-height: 1.35; word-break: normal; text-wrap: balance; }
+  .badge { display: block; margin: 2px 0 0; font-size: 10px; }
+  .desc { font-size: 10.5px; line-height: 1.55; word-break: normal; text-wrap: balance; }
+  .work .flow { display: none; }
   .pills { flex-direction: column; align-items: center; }
   .skills { grid-template-columns: 1fr; }
 }

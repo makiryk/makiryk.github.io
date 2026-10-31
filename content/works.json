@@ -4,7 +4,7 @@
     "badge": "",
     "desc": "3 つの AI が役割を分け、チームで開発を進めるしくみ。",
     "color": 2,
-    "scene": [["robot", "l"], ["handoff", "s"], ["robot", "l"]],
+    "scene": [["robot", "l"], ["spark", "s"], ["robot", "l"]],
     "flow": ["robot:Claude Code", "handoff", "robot:Gemini", "handoff", "robot:Codex"]
   },
   {
@@ -36,7 +36,7 @@
     "badge": "",
     "desc": "Amazon・楽天・メルカリなど 18 の通販サイトをまとめて検索。",
     "color": 8,
-    "scene": [["phone", "l"], ["arrow", "s"], ["apps", "l"]],
+    "scene": [["phone", "l"], ["apps", "l"]],
     "flow": ["phone:キーワード", "arrow", "apps:18 サイト", "arrow", "sheet:価格比較"]
   },
   {
@@ -60,7 +60,7 @@
     "badge": "",
     "desc": "TimeTree の予定を、Google カレンダーへ自動で同期するしくみ。",
     "color": 2,
-    "scene": [["calendar", "l"], ["arrow", "s"], ["calendar", "l"]],
+    "scene": [["calendar", "l"], ["bolt", "s"], ["calendar", "l"]],
     "flow": ["calendar:TimeTree", "arrow", "calendar:Google"]
   },
   {
