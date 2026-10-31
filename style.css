@@ -132,7 +132,7 @@ h2 .ic { color: var(--accent); }
 /* short summaries: break at phrase boundaries and even out line lengths so no single word is left alone */
 .badge { white-space: nowrap; }
 /* note under the cards: the list is only a selection */
-.more { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 18px; font-size: 14px; color: var(--muted); }
+.more { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 28px; font-size: 14px; color: var(--muted); }
 .more .ic { flex: none; color: var(--accent); font-size: 18px; }
 .more, .work h3, .desc, .pt small, .lead, .catch { word-break: auto-phrase; text-wrap: balance; }
 .flow { display: flex; align-items: center; justify-content: center; gap: 4px; flex-wrap: wrap; margin-top: 10px; }
@@ -196,7 +196,7 @@ a.pill:hover { outline: 2px solid var(--accent); }
   .badge { display: block; margin: 2px 0 0; font-size: 10px; }
   .desc { font-size: 10.5px; line-height: 1.55; word-break: normal; text-wrap: balance; }
   .work .flow { display: none; }
-  .more { margin-top: 14px; font-size: 12.5px; text-align: left; }
+  .more { margin-top: 22px; font-size: 12.5px; text-align: left; }
   .pills { flex-direction: column; align-items: center; }
   .skills { grid-template-columns: 1fr; }
 }
