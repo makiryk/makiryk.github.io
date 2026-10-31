@@ -17,11 +17,11 @@
   },
   {
     "name": "ダーツ店混雑マップ",
-    "badge": "",
-    "desc": "ダーツ店を地図で探して、混み具合を予測する Web アプリ。",
+    "badge": "AI 対応中",
+    "desc": "ダーツ店の混み具合を AI が判定し、地図で見られる Web アプリ。",
     "color": 3,
-    "scene": [["pin", "l"], ["target", "l"]],
-    "flow": ["pin:地図", "arrow", "target:ダーツ店", "arrow", "clock:混雑予測"]
+    "scene": [["pin", "l"], ["spark", "s"], ["target", "l"]],
+    "flow": ["pin:ダーツ店", "arrow", "spark:AI が判定", "arrow", "clock:混雑度"]
   },
   {
     "name": "Echo Show 時計ダッシュボード",
