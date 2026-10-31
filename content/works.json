@@ -17,7 +17,7 @@
   },
   {
     "name": "ダーツ店混雑マップ",
-    "badge": "AI 対応中",
+    "badge": "",
     "desc": "ダーツ店の混み具合を AI が判定し、地図で見られる Web アプリ。",
     "color": 3,
     "scene": [["pin", "l"], ["spark", "s"], ["target", "l"]],
