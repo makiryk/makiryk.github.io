@@ -2,10 +2,18 @@
   {
     "name": "AI 同士の作業分担ツール",
     "badge": "",
-    "desc": "Claude Code と Gemini が、得意な作業を任せ合うしくみ。",
+    "desc": "3 つの AI が役割を分け、チームで開発を進めるしくみ。",
     "color": 2,
     "scene": [["robot", "l"], ["handoff", "s"], ["robot", "l"]],
-    "flow": ["robot:Claude Code", "handoff", "robot:Gemini"]
+    "flow": ["robot:Claude Code", "handoff", "robot:Gemini", "handoff", "robot:Codex"]
+  },
+  {
+    "name": "エアコン自動運転 AI",
+    "badge": "開発中",
+    "desc": "部屋の温湿度センサーをもとに、AI がエアコンを自動で運転。",
+    "color": 7,
+    "scene": [["wifi", "l"], ["spark", "s"], ["gear", "l"]],
+    "flow": ["wifi:温湿度センサー", "arrow", "spark:Gemini", "arrow", "gear:エアコン制御"]
   },
   {
     "name": "ダーツ店混雑マップ",
@@ -24,6 +32,14 @@
     "flow": ["cloud:天気・予定", "arrow", "spark:Claude", "arrow", "devices:常時表示"]
   },
   {
+    "name": "通販サイト一括検索",
+    "badge": "",
+    "desc": "Amazon・楽天・メルカリなど 18 の通販サイトをまとめて検索。",
+    "color": 8,
+    "scene": [["phone", "l"], ["arrow", "s"], ["apps", "l"]],
+    "flow": ["phone:キーワード", "arrow", "apps:18 サイト", "arrow", "sheet:価格比較"]
+  },
+  {
     "name": "ジェミニ",
     "badge": "",
     "desc": "話しかけるだけで、Gemini が答えてくれる Alexa スキル。",
@@ -33,11 +49,19 @@
   },
   {
     "name": "赤ちゃんと話すテレビ",
-    "badge": "開発中",
+    "badge": "",
     "desc": "赤ちゃんの声に反応して、AI が優しく語りかけるテレビアプリ。",
     "color": 6,
     "scene": [["wave", "l"], ["spark", "s"], ["devices", "l"]],
     "flow": ["wave:赤ちゃんの声", "arrow", "spark:Claude", "arrow", "speaker:優しい相槌"]
+  },
+  {
+    "name": "カレンダー自動同期",
+    "badge": "",
+    "desc": "TimeTree の予定を、Google カレンダーへ自動で同期するしくみ。",
+    "color": 2,
+    "scene": [["calendar", "l"], ["arrow", "s"], ["calendar", "l"]],
+    "flow": ["calendar:TimeTree", "arrow", "calendar:Google"]
   },
   {
     "name": "棒読みちゃん 区切り読みプラグイン",

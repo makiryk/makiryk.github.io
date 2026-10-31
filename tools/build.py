@@ -41,13 +41,17 @@ def scene(items):
 
 
 def flow(steps):
-    out = []
+    # a connector is kept together with the step after it, so a wrapped line starts with the arrow
+    # instead of leaving it dangling at the end of the previous line
+    out, pending = [], ""
     for step in steps:
         if step in CONNECTORS:
-            out.append(icon("arrow" if step == "arrow" else "handoff", "ic ar"))
+            pending = icon("arrow" if step == "arrow" else "handoff", "ic ar")
         else:
             name, label = step.split(":", 1)
-            out.append(f"<span>{icon(name)}{html.escape(label)}</span>")
+            chip = f"<span>{icon(name)}{html.escape(label)}</span>"
+            out.append(f'<span class="g">{pending}{chip}</span>' if pending else chip)
+            pending = ""
     return '<p class="flow">' + "".join(out) + "</p>"
 
 

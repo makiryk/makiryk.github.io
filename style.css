@@ -107,15 +107,15 @@ section { margin-top: 64px; text-align: center; }
 h2 { display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 20px; font-weight: 900; margin-bottom: 18px; }
 h2 .ic { color: var(--accent); }
 
-.works { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+/* three cards per row (two on phones); a short last row is centred by justify-content */
+.works { --cols: 3; --gap: 14px; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--gap); }
 .work {
-  background: var(--card); border-radius: 20px; padding: 14px; box-shadow: var(--shadow);
-  display: grid; justify-items: center; gap: 14px; text-align: center;
+  flex: 0 0 calc((100% - var(--gap) * (var(--cols) - 1)) / var(--cols)); box-sizing: border-box;
+  background: var(--card); border-radius: 16px; padding: 12px; box-shadow: var(--shadow);
+  display: grid; justify-items: center; align-content: start; gap: 10px; text-align: center;
 }
 .scene { display: block; width: 100%; height: auto; }
-.work .scene { max-width: 240px; }
-/* an odd last card sits alone in the middle instead of in the left column */
-.work:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 9px); }
+.work .scene { max-width: 200px; }
 .s1 { --sbg: var(--s1-bg); --sfg: var(--s1); }
 .s2 { --sbg: var(--s2-bg); --sfg: var(--s2); }
 .s3 { --sbg: var(--s3-bg); --sfg: var(--s3); }
@@ -126,14 +126,16 @@ h2 .ic { color: var(--accent); }
 .s8 { --sbg: var(--s8-bg); --sfg: var(--s8); }
 .scene rect { fill: var(--sbg); }
 .scene { color: var(--sfg); }
-.work h3 { font-size: 18px; font-weight: 900; line-height: 1.4; }
+.work h3 { font-size: 16px; font-weight: 900; line-height: 1.4; }
 .badge { font-size: 12px; font-weight: 700; color: var(--muted); margin-left: 4px; }
-.desc { margin-top: 4px; font-size: 14px; color: var(--muted); }
+.desc { margin-top: 4px; font-size: 13px; color: var(--muted); }
 /* short summaries: break at phrase boundaries and even out line lengths so no single word is left alone */
-.desc, .pt small, .lead, .catch { word-break: auto-phrase; text-wrap: balance; }
+.badge { white-space: nowrap; }
+.work h3, .desc, .pt small, .lead, .catch { word-break: auto-phrase; text-wrap: balance; }
 .flow { display: flex; align-items: center; justify-content: center; gap: 4px; flex-wrap: wrap; margin-top: 10px; }
-.flow span { display: inline-flex; align-items: center; gap: 4px; font-size: 13px; padding: 4px 9px; border-radius: 9px; background: var(--chip); }
+.flow span { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; padding: 3px 8px; border-radius: 9px; background: var(--chip); }
 .flow .ar { color: var(--muted); font-size: 14px; }
+.flow .g { gap: inherit; padding: 0; border-radius: 0; background: none; }
 
 .pills { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
 .pill {
@@ -182,9 +184,14 @@ a.pill:hover { outline: 2px solid var(--accent); }
   .nb { width: 50px; height: 50px; border-radius: 15px; font-size: 22px; }
   .diagram .node + .node { margin-left: 18px; }
   .diagram .node:not(:last-child)::after { top: 24px; left: 52px; width: 20px; }
-  .works { grid-template-columns: 1fr; }
-  .work:last-child:nth-child(odd) { width: auto; justify-self: stretch; }
-  .flow span { font-size: 12px; padding: 3px 7px; }
+  .works { --cols: 2; --gap: 10px; }
+  .work { padding: 10px; gap: 8px; }
+  .work .scene { max-width: 100%; }
+  .work h3 { font-size: 14px; }
+  .desc { font-size: 12px; line-height: 1.6; }
+  .flow { gap: 3px; margin-top: 8px; }
+  .flow span { font-size: 11px; padding: 2px 6px; gap: 3px; }
+  .flow .ar { font-size: 12px; }
   .pills { flex-direction: column; align-items: center; }
   .skills { grid-template-columns: 1fr; }
 }
