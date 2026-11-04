@@ -76,6 +76,15 @@ CATEGORIES = (("ai", "AI・エージェント", "spark"),
               ("web", "Web・ツール", "code"))
 
 
+def cat_header(key, label, symbol):
+    return (f'      <li class="work cat-header cat-{key}" aria-hidden="true">\n'
+            f'        <div class="cat-content">\n'
+            f'          <span class="cat-icon-wrap">{icon(symbol, "ic cat-ic")}</span>\n'
+            f'          <span class="cat-name">{html.escape(label)}</span>\n'
+            f'        </div>\n'
+            f'      </li>')
+
+
 def works_section(works):
     if any(type(w.get("featured")) is not bool or
            w.get("category") not in {c[0] for c in CATEGORIES} for w in works):
@@ -84,21 +93,28 @@ def works_section(works):
     if len(featured) != 4:
         sys.exit("exactly four featured works are required")
     out = ['    <ul class="works featured" aria-label="主な作品">',
-           "\n".join(work(w) for w in featured), '    </ul>']
+           "\n".join(work(w) for w in featured),
+           '    </ul>']
+
+    slider_items = []
     for key, label, symbol in CATEGORIES:
-        cards = "\n".join(work(w) for w in works
-                          if not w["featured"] and w["category"] == key)
-        if not cards:
-            continue
-        out.extend([
-            f'    <div class="work-category">',
-            f'      <h3 class="cat-title" id="cat-{key}">{icon(symbol)}{label}</h3>',
-            f'      <div class="works-slider" tabindex="0" role="region" aria-labelledby="cat-{key}" aria-describedby="slider-help">',
-            '        <div class="works-track">',
-            f'          <ul class="works-group">\n{cards}\n          </ul>',
-            f'          <ul class="works-group" aria-hidden="true" inert>\n{cards}\n          </ul>',
-            '        </div>', '      </div>', '    </div>'])
-    out.append('    <p class="sr" id="slider-help">ホバーまたはフォーカスで停止。左右キーまたはスワイプでスクロールできます。</p>')
+        slider_items.append(cat_header(key, label, symbol))
+        for w in works:
+            if not w["featured"] and w["category"] == key:
+                slider_items.append(work(w))
+
+    slider_cards = "\n".join(slider_items)
+    out.extend([
+        '    <div class="works-slider-wrap">',
+        '      <div class="works-slider" tabindex="0" role="region" aria-label="その他の作品" aria-describedby="slider-help">',
+        '        <div class="works-track">',
+        f'          <ul class="works-group">\n{slider_cards}\n          </ul>',
+        f'          <ul class="works-group" aria-hidden="true" inert>\n{slider_cards}\n          </ul>',
+        '        </div>',
+        '      </div>',
+        '    </div>',
+        '    <p class="sr" id="slider-help">ホバーまたはフォーカスで停止。左右キーまたはスワイプでスクロールできます。</p>'
+    ])
     return "\n".join(out)
 
 

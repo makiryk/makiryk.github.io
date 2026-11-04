@@ -201,28 +201,122 @@ a.pill:hover { outline: 2px solid var(--accent); }
   .skills { grid-template-columns: 1fr; }
 }
 
-/* Featured projects and category marquees */
-.works.featured { --cols: 4; }
-.work-category { margin-top: 30px; }
-.cat-title { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; font-size: 16px; color: var(--muted); text-align: left; }
-.cat-title .ic { color: var(--accent); }
-.works-slider { overflow: hidden; padding: 6px 0 16px; border-radius: 16px; }
+/* Featured projects and single marquee slider */
+.works.featured { --cols: 4; --gap: 14px; }
+.featured .work { padding: 14px 12px; }
+
+.works-slider-wrap { margin-top: 36px; position: relative; }
+.works-slider {
+  overflow: hidden;
+  padding: 6px 0 16px;
+  border-radius: 16px;
+  mask-image: linear-gradient(to right, transparent, black 32px, black calc(100% - 32px), transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 32px, black calc(100% - 32px), transparent);
+}
 .works-slider:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-.works-track { display: flex; width: max-content; min-width: 200%; animation: marquee 32s linear infinite; }
-.works-group { display: flex; flex: 1 0 auto; justify-content: space-around; gap: 14px; padding-right: 14px; }
-.works-group .work { flex: 0 0 250px; width: 250px; }
-.works-slider:hover .works-track, .works-slider:focus-within .works-track { animation-play-state: paused; }
+.works-track {
+  display: flex;
+  width: max-content;
+  min-width: 200%;
+  animation: marquee 42s linear infinite;
+}
+.works-group {
+  display: flex;
+  flex: 1 0 auto;
+  align-items: stretch;
+  gap: 10px;
+  padding-right: 10px;
+}
+
+/* スクロール分のカードをさらに小さくコンパクトに */
+.works-group .work {
+  flex: 0 0 156px;
+  width: 156px;
+  padding: 8px 8px 10px;
+  gap: 5px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(28, 33, 30, .06);
+}
+.works-group .work .scene {
+  max-width: 96px;
+}
+.works-group .work h3 {
+  font-size: 11.5px;
+  line-height: 1.35;
+}
+.works-group .work .desc {
+  font-size: 10px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.works-group .work .flow {
+  display: none;
+}
+
+/* 分類のタイトルカード（一緒にスクロール） */
+.works-group .cat-header {
+  flex: 0 0 110px;
+  width: 110px;
+  background: var(--card);
+  border: 1px dashed var(--line);
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  padding: 10px 6px;
+  border-radius: 12px;
+}
+.cat-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.cat-icon-wrap {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+}
+.cat-icon-wrap .ic {
+  width: 18px;
+  height: 18px;
+}
+.cat-name {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.35;
+  word-break: normal;
+  text-wrap: balance;
+}
+
+/* ホバー・フォーカスで一時停止 */
+.works-slider:hover .works-track,
+.works-slider:focus-within .works-track {
+  animation-play-state: paused;
+}
 .works-slider:focus-within { overflow-x: auto; }
 .works-slider:focus-within .works-track { transform: none !important; }
 .works-slider:focus-within .works-group[aria-hidden] { display: none; }
 .works-slider:focus-within .works-track { min-width: 100%; }
+
 @keyframes marquee { to { transform: translateX(-50%); } }
+
 @media (max-width: 760px) {
-  .works.featured { --cols: 2; --gap: 12px; }
-  .featured .work { padding: 10px; }
-  .work h3 { font-size: 14px; }
-  .desc { font-size: 12px; }
-  .works-group .work { padding: 12px; }
+  .works.featured { --cols: 2; --gap: 10px; }
+  .featured .work { padding: 10px 8px; }
+  .works-slider {
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
 }
 @media (prefers-reduced-motion: reduce), (hover: none) {
   .works-slider { overflow-x: auto; }
