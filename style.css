@@ -108,7 +108,7 @@ h2 { display: flex; align-items: center; justify-content: center; gap: 10px; fon
 h2 .ic { color: var(--accent); }
 
 /* three cards per row (two on phones); a short last row is centred by justify-content */
-.works { --cols: 3; --gap: 14px; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--gap); }
+.works { --cols: 4; --gap: 14px; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--gap); }
 .work {
   flex: 0 0 calc((100% - var(--gap) * (var(--cols) - 1)) / var(--cols)); box-sizing: border-box;
   background: var(--card); border-radius: 16px; padding: 12px; box-shadow: var(--shadow);

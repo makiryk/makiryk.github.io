@@ -9,7 +9,7 @@
   },
   {
     "name": "エアコン自動運転 AI",
-    "badge": "開発中",
+    "badge": "",
     "desc": "部屋の温湿度センサーをもとに、AI がエアコンを自動で運転。",
     "color": 7,
     "scene": [["wifi", "l"], ["spark", "s"], ["gear", "l"]],
@@ -70,5 +70,29 @@
     "color": 4,
     "scene": [["sheet", "l"], ["split", "s"], ["speaker", "l"]],
     "flow": ["sheet:タグ辞書", "arrow", "split:単語で分割", "arrow", "speaker:読み上げ"]
+  },
+  {
+    "name": "Android Auto エミュレーター",
+    "badge": "",
+    "desc": "USB接続したスマホの画面を、PC上で車載ナビとして操作。",
+    "color": 5,
+    "scene": [["phone", "l"], ["usb", "s"], ["car", "l"]],
+    "flow": ["phone:スマホ", "arrow", "usb:USB 接続", "arrow", "car:ナビ画面"]
+  },
+  {
+    "name": "AI 向け安全 SSH ツール",
+    "badge": "",
+    "desc": "パスワードを秘匿し、AI による誤操作や破壊コマンドを防止。",
+    "color": 8,
+    "scene": [["robot", "l"], ["gear", "s"], ["pc", "l"]],
+    "flow": ["robot:AI 指示", "arrow", "gear:セーフガード", "arrow", "pc:安全に実行"]
+  },
+  {
+    "name": "AI プロジェクト推進ツール",
+    "badge": "",
+    "desc": "AI がチームを組み、計画・開発・レビューを自律で進行。",
+    "color": 6,
+    "scene": [["sheet", "l"], ["spark", "s"], ["robot", "l"]],
+    "flow": ["sheet:計画・WBS", "arrow", "spark:専門 AI", "arrow", "robot:自律推進"]
   }
 ]
