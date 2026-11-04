@@ -30,6 +30,16 @@
     "flow": ["pin:ダーツ店", "arrow", "spark:AI が判定", "arrow", "clock:混雑度"]
   },
   {
+    "name": "赤ちゃんと話すテレビ",
+    "featured": true,
+    "category": "iot",
+    "badge": "",
+    "desc": "赤ちゃんの声に反応して、AI が優しく語りかけるテレビアプリ。",
+    "color": 6,
+    "scene": [["wave", "l"], ["spark", "s"], ["devices", "l"]],
+    "flow": ["wave:赤ちゃんの声", "arrow", "spark:Claude", "arrow", "speaker:優しい相槌"]
+  },
+  {
     "name": "Echo Show 時計ダッシュボード",
     "featured": false,
     "category": "iot",
@@ -60,16 +70,6 @@
     "flow": ["speaker:Alexa", "arrow", "spark:Gemini", "arrow", "wave:読み上げ"]
   },
   {
-    "name": "赤ちゃんと話すテレビ",
-    "featured": false,
-    "category": "iot",
-    "badge": "",
-    "desc": "赤ちゃんの声に反応して、AI が優しく語りかけるテレビアプリ。",
-    "color": 6,
-    "scene": [["wave", "l"], ["spark", "s"], ["devices", "l"]],
-    "flow": ["wave:赤ちゃんの声", "arrow", "spark:Claude", "arrow", "speaker:優しい相槌"]
-  },
-  {
     "name": "カレンダー自動同期",
     "featured": false,
     "category": "iot",
@@ -91,11 +91,11 @@
   },
   {
     "name": "Android Auto エミュレーター",
-    "featured": true,
+    "featured": false,
     "category": "web",
     "badge": "",
     "desc": "USB接続したスマホの画面を、PC上で車載ナビとして操作。",
-    "color": 5,
+    "color": 7,
     "scene": [["phone", "l"], ["usb", "s"], ["car", "l"]],
     "flow": ["phone:スマホ", "arrow", "usb:USB 接続", "arrow", "car:ナビ画面"]
   },

@@ -228,7 +228,7 @@ a.pill:hover { outline: 2px solid var(--accent); }
   padding-right: 10px;
 }
 
-/* スクロール分のカードをさらに小さくコンパクトに */
+/* スクロール分のカード（カテゴリタグ付き・コンパクト） */
 .works-group .work {
   flex: 0 0 156px;
   width: 156px;
@@ -236,6 +236,22 @@ a.pill:hover { outline: 2px solid var(--accent); }
   gap: 5px;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(28, 33, 30, .06);
+}
+.cat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-bottom: 2px;
+  white-space: nowrap;
+}
+.cat-pill .ic {
+  font-size: 11px;
 }
 .works-group .work .scene {
   max-width: 96px;
@@ -251,51 +267,6 @@ a.pill:hover { outline: 2px solid var(--accent); }
 }
 .works-group .work .flow {
   display: none;
-}
-
-/* 分類のタイトルカード（一緒にスクロール） */
-.works-group .cat-header {
-  flex: 0 0 110px;
-  width: 110px;
-  background: var(--card);
-  border: 1px dashed var(--line);
-  box-shadow: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  text-align: center;
-  padding: 10px 6px;
-  border-radius: 12px;
-}
-.cat-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-.cat-icon-wrap {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: var(--accent-soft);
-  color: var(--accent);
-  display: grid;
-  place-items: center;
-  font-size: 16px;
-}
-.cat-icon-wrap .ic {
-  width: 18px;
-  height: 18px;
-}
-.cat-name {
-  font-size: 11.5px;
-  font-weight: 700;
-  color: var(--text);
-  line-height: 1.35;
-  word-break: normal;
-  text-wrap: balance;
 }
 
 /* ホバー・フォーカスで一時停止 */

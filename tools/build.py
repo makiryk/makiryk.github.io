@@ -19,6 +19,12 @@ COLORS = range(1, 9)                  # scene colour slots s1..s8 defined in sty
 CONNECTORS = {"arrow", "handoff"}     # flow items drawn as small connectors between steps
 NUDGE_Y = {"robot": 2}                # icons whose drawing sits high in its box, moved down (scene units)
 
+CATEGORIES = {
+    "ai": ("AI・エージェント", "spark"),
+    "iot": ("スマートホーム・IoT", "cloud"),
+    "web": ("Web・ツール", "code"),
+}
+
 
 def icon(name, cls="ic"):
     return f'<svg class="{cls}"><use href="#i-{name}"/></svg>'
@@ -57,11 +63,16 @@ def flow(steps):
     return '<p class="flow">' + "".join(out) + "</p>"
 
 
-def work(w):
+def work(w, show_cat=False):
     if w["color"] not in COLORS:
         sys.exit(f'{w["name"]}: color must be 1-8')
     badge = f' <span class="badge">{html.escape(w["badge"])}</span>' if w.get("badge") else ""
+    cat_tag = ""
+    if show_cat and w.get("category") in CATEGORIES:
+        label, symbol = CATEGORIES[w["category"]]
+        cat_tag = f'        <span class="cat-pill">{icon(symbol, "ic")}{html.escape(label)}</span>\n'
     return (f'      <li class="work s{w["color"]}">\n'
+            f'{cat_tag}'
             f'        {scene(w["scene"])}\n'
             f'        <div>\n'
             f'          <h3>{html.escape(w["name"])}{badge}</h3>\n'
@@ -71,39 +82,24 @@ def work(w):
             f'      </li>')
 
 
-CATEGORIES = (("ai", "AI・エージェント", "spark"),
-              ("iot", "スマートホーム・IoT", "cloud"),
-              ("web", "Web・ツール", "code"))
-
-
-def cat_header(key, label, symbol):
-    return (f'      <li class="work cat-header cat-{key}" aria-hidden="true">\n'
-            f'        <div class="cat-content">\n'
-            f'          <span class="cat-icon-wrap">{icon(symbol, "ic cat-ic")}</span>\n'
-            f'          <span class="cat-name">{html.escape(label)}</span>\n'
-            f'        </div>\n'
-            f'      </li>')
-
-
 def works_section(works):
     if any(type(w.get("featured")) is not bool or
-           w.get("category") not in {c[0] for c in CATEGORIES} for w in works):
+           w.get("category") not in CATEGORIES for w in works):
         sys.exit("each work needs a boolean featured and a known category")
     featured = [w for w in works if w["featured"]]
     if len(featured) != 4:
         sys.exit("exactly four featured works are required")
     out = ['    <ul class="works featured" aria-label="主な作品">',
-           "\n".join(work(w) for w in featured),
+           "\n".join(work(w, show_cat=False) for w in featured),
            '    </ul>']
 
-    slider_items = []
-    for key, label, symbol in CATEGORIES:
-        slider_items.append(cat_header(key, label, symbol))
+    slider_works = []
+    for cat_key in ("ai", "iot", "web"):
         for w in works:
-            if not w["featured"] and w["category"] == key:
-                slider_items.append(work(w))
+            if not w["featured"] and w["category"] == cat_key:
+                slider_works.append(work(w, show_cat=True))
 
-    slider_cards = "\n".join(slider_items)
+    slider_cards = "\n".join(slider_works)
     out.extend([
         '    <div class="works-slider-wrap">',
         '      <div class="works-slider" tabindex="0" role="region" aria-label="その他の作品" aria-describedby="slider-help">',
