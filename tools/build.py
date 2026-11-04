@@ -71,6 +71,37 @@ def work(w):
             f'      </li>')
 
 
+CATEGORIES = (("ai", "AI・エージェント", "spark"),
+              ("iot", "スマートホーム・IoT", "cloud"),
+              ("web", "Web・ツール", "code"))
+
+
+def works_section(works):
+    if any(type(w.get("featured")) is not bool or
+           w.get("category") not in {c[0] for c in CATEGORIES} for w in works):
+        sys.exit("each work needs a boolean featured and a known category")
+    featured = [w for w in works if w["featured"]]
+    if len(featured) != 4:
+        sys.exit("exactly four featured works are required")
+    out = ['    <ul class="works featured" aria-label="主な作品">',
+           "\n".join(work(w) for w in featured), '    </ul>']
+    for key, label, symbol in CATEGORIES:
+        cards = "\n".join(work(w) for w in works
+                          if not w["featured"] and w["category"] == key)
+        if not cards:
+            continue
+        out.extend([
+            f'    <div class="work-category">',
+            f'      <h3 class="cat-title" id="cat-{key}">{icon(symbol)}{label}</h3>',
+            f'      <div class="works-slider" tabindex="0" role="region" aria-labelledby="cat-{key}" aria-describedby="slider-help">',
+            '        <div class="works-track">',
+            f'          <ul class="works-group">\n{cards}\n          </ul>',
+            f'          <ul class="works-group" aria-hidden="true" inert>\n{cards}\n          </ul>',
+            '        </div>', '      </div>', '    </div>'])
+    out.append('    <p class="sr" id="slider-help">ホバーまたはフォーカスで停止。左右キーまたはスワイプでスクロールできます。</p>')
+    return "\n".join(out)
+
+
 def now(n):
     return (f'    <p class="now"><span class="dot" aria-hidden="true"></span>'
             f'{icon(n["icon"])}{html.escape(n["text"])}</p>')
@@ -96,7 +127,7 @@ def main():
     if missing:
         sys.exit(f"unknown icons: {', '.join(missing)} (add a <symbol id=\"i-NAME\"> to index.html first)")
 
-    src = replace(src, "works", "\n".join(work(w) for w in works))
+    src = replace(src, "works", works_section(works))
     src = replace(src, "now", '    <div class="nows">\n' + "\n".join(now(n) for n in nows) + "\n    </div>")
     INDEX.write_text(src, encoding="utf-8", newline="\n")
     print(f"built {len(works)} works, {len(nows)} now items")

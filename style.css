@@ -200,3 +200,32 @@ a.pill:hover { outline: 2px solid var(--accent); }
   .pills { flex-direction: column; align-items: center; }
   .skills { grid-template-columns: 1fr; }
 }
+
+/* Featured projects and category marquees */
+.works.featured { --cols: 4; }
+.work-category { margin-top: 30px; }
+.cat-title { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; font-size: 16px; color: var(--muted); text-align: left; }
+.cat-title .ic { color: var(--accent); }
+.works-slider { overflow: hidden; padding: 6px 0 16px; border-radius: 16px; }
+.works-slider:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.works-track { display: flex; width: max-content; min-width: 200%; animation: marquee 32s linear infinite; }
+.works-group { display: flex; flex: 1 0 auto; justify-content: space-around; gap: 14px; padding-right: 14px; }
+.works-group .work { flex: 0 0 250px; width: 250px; }
+.works-slider:hover .works-track, .works-slider:focus-within .works-track { animation-play-state: paused; }
+.works-slider:focus-within { overflow-x: auto; }
+.works-slider:focus-within .works-track { transform: none !important; }
+.works-slider:focus-within .works-group[aria-hidden] { display: none; }
+.works-slider:focus-within .works-track { min-width: 100%; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+@media (max-width: 760px) {
+  .works.featured { --cols: 2; --gap: 12px; }
+  .featured .work { padding: 10px; }
+  .work h3 { font-size: 14px; }
+  .desc { font-size: 12px; }
+  .works-group .work { padding: 12px; }
+}
+@media (prefers-reduced-motion: reduce), (hover: none) {
+  .works-slider { overflow-x: auto; }
+  .works-track { animation: none; min-width: 100%; }
+  .works-group[aria-hidden] { display: none; }
+}
