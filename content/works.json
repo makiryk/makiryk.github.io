@@ -10,6 +10,16 @@
     "flow": ["robot:Claude Code", "handoff", "robot:Gemini", "handoff", "robot:Codex"]
   },
   {
+    "name": "自律成長 AI エンジン",
+    "featured": true,
+    "category": "ai",
+    "badge": "開発中",
+    "desc": "AI が提案・検証・採用をくり返し、対象を世代ごとに育てる。",
+    "color": 5,
+    "scene": [["spark", "l"], ["bolt", "s"], ["code", "l"]],
+    "flow": ["spark:AI が提案", "arrow", "gear:自動で検証", "arrow", "folder:世代を記録"]
+  },
+  {
     "name": "エアコン自動運転 AI",
     "featured": true,
     "category": "iot",
@@ -18,16 +28,6 @@
     "color": 7,
     "scene": [["wifi", "l"], ["spark", "s"], ["gear", "l"]],
     "flow": ["wifi:温湿度センサー", "arrow", "spark:Gemini", "arrow", "gear:エアコン制御"]
-  },
-  {
-    "name": "ダーツ店混雑マップ",
-    "featured": true,
-    "category": "web",
-    "badge": "",
-    "desc": "ダーツ店の混み具合を AI が判定し、地図で見られる Web アプリ。",
-    "color": 3,
-    "scene": [["pin", "l"], ["spark", "s"], ["target", "l"]],
-    "flow": ["pin:ダーツ店", "arrow", "spark:AI が判定", "arrow", "clock:混雑度"]
   },
   {
     "name": "赤ちゃんと話すテレビ",
@@ -40,24 +40,24 @@
     "flow": ["wave:赤ちゃんの声", "arrow", "spark:Claude", "arrow", "speaker:優しい相槌"]
   },
   {
-    "name": "Echo Show 時計ダッシュボード",
+    "name": "AI プロジェクト推進ツール",
     "featured": false,
-    "category": "iot",
+    "category": "ai",
     "badge": "",
-    "desc": "Echo Show に天気・予定・運行情報・AI のひとことを常時表示するしくみ。",
-    "color": 5,
-    "scene": [["cloud", "l"], ["spark", "s"], ["devices", "l"]],
-    "flow": ["cloud:天気・予定", "arrow", "spark:Claude", "arrow", "devices:常時表示"]
+    "desc": "AI がチームを組み、計画・開発・レビューを自律で進行。",
+    "color": 6,
+    "scene": [["sheet", "l"], ["spark", "s"], ["robot", "l"]],
+    "flow": ["sheet:計画・WBS", "arrow", "spark:専門 AI", "arrow", "robot:自律推進"]
   },
   {
-    "name": "通販サイト一括検索",
+    "name": "スマホ・PC 遠隔コネクタ",
     "featured": false,
-    "category": "web",
-    "badge": "",
-    "desc": "Amazon・楽天・メルカリなど 18 の通販サイトをまとめて検索。",
-    "color": 8,
-    "scene": [["phone", "l"], ["apps", "l"]],
-    "flow": ["phone:キーワード", "arrow", "apps:18 サイト", "arrow", "sheet:価格比較"]
+    "category": "ai",
+    "badge": "開発中",
+    "desc": "Claude から自分のスマホと PC を読み取り、決まった操作を頼めるしくみ。",
+    "color": 3,
+    "scene": [["spark", "l"], ["link", "s"], ["devices", "l"]],
+    "flow": ["spark:Claude", "arrow", "link:コネクタ", "arrow", "devices:スマホ・PC"]
   },
   {
     "name": "ジェミニ",
@@ -70,6 +70,26 @@
     "flow": ["speaker:Alexa", "arrow", "spark:Gemini", "arrow", "wave:読み上げ"]
   },
   {
+    "name": "AI 向け安全 SSH ツール",
+    "featured": false,
+    "category": "ai",
+    "badge": "",
+    "desc": "パスワードを秘匿し、AI による誤操作や破壊コマンドを防止。",
+    "color": 8,
+    "scene": [["robot", "l"], ["gear", "s"], ["pc", "l"]],
+    "flow": ["robot:AI 指示", "arrow", "gear:セーフガード", "arrow", "pc:安全に実行"]
+  },
+  {
+    "name": "Echo Show 時計ダッシュボード",
+    "featured": false,
+    "category": "iot",
+    "badge": "",
+    "desc": "Echo Show に天気・予定・運行情報・AI のひとことを常時表示するしくみ。",
+    "color": 5,
+    "scene": [["cloud", "l"], ["spark", "s"], ["devices", "l"]],
+    "flow": ["cloud:天気・予定", "arrow", "spark:Claude", "arrow", "devices:常時表示"]
+  },
+  {
     "name": "カレンダー自動同期",
     "featured": false,
     "category": "iot",
@@ -78,16 +98,6 @@
     "color": 2,
     "scene": [["calendar", "l"], ["bolt", "s"], ["calendar", "l"]],
     "flow": ["calendar:TimeTree", "arrow", "calendar:Google"]
-  },
-  {
-    "name": "棒読みちゃん 区切り読みプラグイン",
-    "featured": false,
-    "category": "web",
-    "badge": "",
-    "desc": "棒読みちゃんの読み上げを、辞書の単語で区切るプラグイン。",
-    "color": 4,
-    "scene": [["sheet", "l"], ["split", "s"], ["speaker", "l"]],
-    "flow": ["sheet:タグ辞書", "arrow", "split:単語で分割", "arrow", "speaker:読み上げ"]
   },
   {
     "name": "Android Auto エミュレーター",
@@ -100,23 +110,13 @@
     "flow": ["phone:スマホ", "arrow", "usb:USB 接続", "arrow", "car:ナビ画面"]
   },
   {
-    "name": "AI 向け安全 SSH ツール",
+    "name": "Android アプリ安全チェック",
     "featured": false,
-    "category": "ai",
+    "category": "web",
     "badge": "",
-    "desc": "パスワードを秘匿し、AI による誤操作や破壊コマンドを防止。",
-    "color": 8,
-    "scene": [["robot", "l"], ["gear", "s"], ["pc", "l"]],
-    "flow": ["robot:AI 指示", "arrow", "gear:セーフガード", "arrow", "pc:安全に実行"]
-  },
-  {
-    "name": "AI プロジェクト推進ツール",
-    "featured": false,
-    "category": "ai",
-    "badge": "",
-    "desc": "AI がチームを組み、計画・開発・レビューを自律で進行。",
-    "color": 6,
-    "scene": [["sheet", "l"], ["spark", "s"], ["robot", "l"]],
-    "flow": ["sheet:計画・WBS", "arrow", "spark:専門 AI", "arrow", "robot:自律推進"]
+    "desc": "マルウェア・危険な権限・追跡 SDK を端末内で見つけて対処。",
+    "color": 4,
+    "scene": [["phone", "l"], ["target", "s"], ["gear", "l"]],
+    "flow": ["phone:アプリ", "arrow", "target:脅威を検出", "arrow", "gear:自動で対処"]
   }
 ]
